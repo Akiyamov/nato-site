@@ -1,0 +1,29 @@
+{% extends "header.html" %}
+
+{% block content %}
+<meta charset=utf-8>
+<head>
+        <title>НАТО СОСИ У РФ</title>
+    <link rel=stylesheet href=https://fonts.googleapis.com/css?family=Oswald>
+    <style type=text/css>
+        body {
+            font-family: Oswald, serif;
+            background-image: url("{{url_for('static', filename='index.jpg')}}");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-color: rgb(56, 56, 56);
+            background-blend-mode: multiply;
+        }
+        .main-header {
+            text-align: center;
+            padding: 100px;
+            color: rgb(228, 180, 180);
+        }
+    </style>
+</head>
+<html>
+    <h1 class=main-header>НАТО-СОСИ-У.РФ</h1>
+    <div class=backgound-tint></div>
+</html>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "header.html" %}
+
+{% block content %}
+<head>
+        <title>Гифки</title>
+        <link rel=stylesheet href=https://fonts.googleapis.com/css?family=Oswald>
+        <style type=text/css>
+                body {
+                    font-family: Oswald, serif;
+                    background-image: url("{{url_for('static', filename='gifs.jpg')}}");
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    background-size: cover;
+                    background-color: rgb(56, 56, 56);
+                    background-blend-mode: multiply;
+                }
+                .main-text {
+                    text-align: center;
+                    text-decoration: none;
+                    padding: 100px;
+                    color: rgb(228, 180, 180);
+                }
+        </style>
+</head>
+<html>
+        <h1 class=main-text><a href="https://bocchi_the_bucket.hb.ru-msk.vkcs.cloud/bocchi-gifs.rar">Скачать</a></h1>
+        <h1 class=main-text>Любезно спизженно от <a href="https://t.me/Bocchi_the_Rock_GIFs">https://t.me/Bocchi_the_Rock_GIFs</a></h1>
+</html>
+{% endblock %}

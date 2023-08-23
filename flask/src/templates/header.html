@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&display=swap" rel="stylesheet">
+    <style type="text/css">
+        body {
+            margin: 0px 0px;
+        }
+        .header {
+            background: transparent;
+            overflow: hidden;
+            padding: 0px 15px;
+            font-family: Noto Sans, sans-serif;
+        }
+        .kessoku-header-image {
+            width: 60px;
+            padding: 28px 10px;
+            display: flex;
+            float: left;
+        }
+        .kessoku-header-text {
+            color: white;
+            float: right;
+            text-decoration:none;
+            font-size: 40px;
+            padding: 0px 10px;
+        }
+        .kessoku-header-slash {
+            color: white;
+            float: right;
+            text-decoration:none;
+            font-size: 40px;
+            padding: 0px 10px;
+        }
+        .kessoku-header-text:hover {
+            color: yellow;
+        }
+    </style>
+</head>
+<html>
+    <div class="header">
+        <img class="kessoku-header-image" src="{{url_for('static', filename='kessoku_white.png')}}">
+        <p><a class="kessoku-header-text" href="/гифки">Гифки</a><a class="kessoku-header-slash">/</a><a class="kessoku-header-text" href="https://vk.com/kessoku_group">ВК</a><a class="kessoku-header-slash">/</a><a class="kessoku-header-text" href="/">Главная</a></p>
+    </div>
+    {% block content %}
+    {% endblock %}
+</html>
