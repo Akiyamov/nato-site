@@ -9,6 +9,8 @@ services:
       - "5555"
 
   nginx:
+    depends_on:
+      - flask
     build: ./nginx
     restart: always
     ports:
