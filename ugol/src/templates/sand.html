@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Купить песок в Тюмени с доставкой | Проминвест 72</title>
+<meta name="description" content="Песок в Тюмени в МКР или валом с доставкой или самовывозом по доступным ценам"/>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row pt-5">
+        <div class="col-12">
+          <h3 class="text-uppercase border-bottom mb-4">Песок</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 mb-3 d-flex align-items-stretch">
+          <div class="card">
+            <img src="{{ url_for('static', filename='A-B4vgTJH3U.jpg') }}" class="card-img-top" alt="Card Image">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Песок валом</h5>
+              <p class="card-text mb-4">Лесной песок валом.</p>
+              <h4 class="card-text mb-4">1000 ₽ / Тонна</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-3 d-flex align-items-stretch">
+          <div class="card">
+            <img src="{{ url_for('static', filename='ThmuzvwW0S8.jpg') }}" class="card-img-top" alt="Card Image">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Песок в МКР</h5>
+              <p class="card-text mb-4">Лесной песок в мешках МКР.</p>
+              <h4 class="card-text mb-4">1500 ₽ / Мешок</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

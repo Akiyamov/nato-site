@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Купить горючие и строительные материалы с доставкой в Тюмени | Проминвест 72</title>
+<meta name="description" content="Каменный уголь, песок и щебень в Тюмени по доступным ценам"/>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row pt-5">
+        <div class="col-12">
+          <h3 class="text-uppercase border-bottom mb-4">Твердые и сыпучие материалы</h3>
+        </div>
+    </div>
+<div class="row">
+    <div class="col-lg-4 mb-3 d-flex align-items-stretch">
+        <a href="/уголь">
+          <div class="card">
+            <img src="{{ url_for('static', filename='nW4leITIzFc.jpg') }}" class="card-img-top" alt="Card Image">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Каменный уголь</h5>
+            </div>
+          </div>
+        </a>
+        </div>
+        <div class="col-lg-4 mb-3 d-flex align-items-stretch"><a href="/песок">
+          <div class="card">
+            <img src="{{ url_for('static', filename='A-B4vgTJH3U.jpg') }}" class="card-img-top" alt="Card Image">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Песок</h5>
+            </div>
+          </div></a>
+        </div>
+        <div class="col-lg-4 mb-3 d-flex align-items-stretch"><a href="/щебень">
+          <div class="card">
+            <img src="{{ url_for('static', filename='i2lgDddtGLM.jpg') }}" class="card-img-top" alt="Card Image">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Щебень</h5>
+            </div>
+          </div>
+        </div></a>
+      </div>    
+</div>
+<div class="row pt-5">
+    <div class="col-12">
+      <h3 class="text-uppercase border-bottom mb-4"></h3>
+      <p class="text-center">Компания Проминвест 72 осуществляет продажу каменного угля, песка и щебня, а также услуги доставки.
+        Наша компания расположена по адрресу Депутатская 9.
+        <div id="map-container" class="z-depth-1-half map-container" style="height: 100%">
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A24ccd6f76a121bb53627e47ca42ce512dda599b50d2a9c166eab5aba0f1ac4ea&amp;source=constructor" width="100%" height="500px" frameborder="0"></iframe>
+        </div>
+      </p>
+    </div>
+</div>
+</div>
+{% endblock %}

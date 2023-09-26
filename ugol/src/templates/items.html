@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Товары | Проминвест 72</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Товары</h1>
+    <div class="card-deck mb-3">
+    {% for el in data %}
+    <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+        <h4 class="my-0 font-weight-normal">{{ el.title }}</h4>
+        </div>
+        <div class="card-body">
+            <img class="card-img-top" src="{{ url_for('static', filename='img.img') }}">
+            <h1 class="card-title pricing-card-title">{{ el.price }} <small class="text-muted">рублей</small></h1>
+            <a href="" class="btn btn-lg btn-block btn-outline-primary">Добавить в корзину</a>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+name: Update websites
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo 
+        uses: actions/Checkout@v3
+      - name: Login Docker
+        run: |
+          echo ${{ secrets.docker_oauth_token }}
+          docker login --username akiyamov --password-stdin
+      - name: Build images
+        run: |
+          docker build --tag akiyamov/nato-site --file ./nato/Dockerfile ./nato
+          docker build --tag akiyamov/ugol-site --file ./ugol/Dockerfile ./ugol
+          docker build --tag akiyamov/nginx-sites --file ./nginx/Dockerfile ./nginx
+      - name: Push new images
+        run: |
+          docker push akiyamov/nginx-sites:latest
+          docker push akiyamov/nato-site:latest
+          docker push akiyamov/ugol-site:latest
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: 146.185.209.74
+          username: ubuntu
+          key: ${{ secrets.key }}
+          port: 22
+          script: ./home/ubuntu/nato-site/restart.sh

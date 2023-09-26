@@ -1,24 +1,34 @@
-version: "3.3"
+version: "3.8"
 
 services:
-
-  flask:
-    build: ./flask
-    container_name: Flask-app
+  nato:
+    build: akiyamov/nato-site
     restart: always
     expose:
       - "5555"
-
+  ugol:
+    image: akiyamov/ugol-site
+    restart: always
+    ports:
+      - "5050:5050"
   nginx:
-    build: ./nginx
-    container_name: nginx-server
+    depends_on:
+      - nato
+      - ugol
+    build: akiyamov/nginx-sites
     restart: always
     ports:
       - "80:8080"
       - "443:44443"
-#    volumes: 
-#     - ./certbot/www:/var/www/certbot/:ro
-#  certbot:
-#    image: certbot/certbot:latest
-#    volumes:
-#      - ./certbot/www/:/var/www/certbot/:rw
+    volumes:
+     - /home/ubuntu/nato-site/nato/src/templates:/var/www/html
+     - /home/ubuntu/nato-site/certbot/conf/:/etc/nginx/ssl/
+       #   certbot:
+       #     depends_on:
+       #       - nginx
+       #     image: certbot/certbot:latest
+       #     volumes:
+       #       - /home/ubuntu/nato-site/certbot/www/:/var/www/certbot/
+       #       - /home/ubuntu/nato-site/nato/src/templates:/var/www/html
+       #       - /home/ubuntu/nato-site/certbot/conf/:/etc/letsencrypt/
+       #     command: certonly --webroot --webroot-path=/var/www/html --email AkiyamaSS@yandex.ru --agree-tos --no-eff-email -d xn-----6kc7awhbxbfs.xn--p1ai
