@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   nato:
-    build: akiyamov/nato-site
+    image: akiyamov/nato-site
     restart: always
     expose:
       - "5555"
@@ -22,7 +22,7 @@ services:
     depends_on:
       - nato
       - ugol
-    build: akiyamov/nginx-sites
+    image: akiyamov/nginx-sites
     restart: always
     ports:
       - "80:8080"
