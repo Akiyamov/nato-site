@@ -18,6 +18,7 @@ services:
       - 8008:8008
     volumes:
       - /var/docker_data/matrix:/data
+      - /home/ubuntu/nato-site/nato/src/templates:/var/www/html
   nginx:
     depends_on:
       - nato
