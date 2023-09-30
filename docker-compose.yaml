@@ -31,12 +31,12 @@ services:
     volumes:
      - /home/ubuntu/nato-site/nato/src/templates:/var/www/html
      - /home/ubuntu/nato-site/certbot/conf/:/etc/nginx/ssl/
-  certbot:
-    depends_on:
-      - nginx
-    image: certbot/certbot:latest
-    volumes:
-      - /home/ubuntu/nato-site/certbot/www/:/var/www/certbot/
-      - /home/ubuntu/nato-site/nato/src/templates:/var/www/html
-      - /home/ubuntu/nato-site/certbot/conf/:/etc/letsencrypt/
-    command: certonly --webroot --webroot-path=/var/www/html --email AkiyamaSS@yandex.ru --agree-tos --no-eff-email -d matrix.xn-----6kc7awhbxbfs.xn--p1ai
+       #  certbot:
+       #    depends_on:
+       #      - nginx
+       #    image: certbot/certbot:latest
+       #    volumes:
+       #      - /home/ubuntu/nato-site/certbot/www/:/var/www/certbot/
+       #      - /home/ubuntu/nato-site/nato/src/templates:/var/www/html
+       #      - /home/ubuntu/nato-site/certbot/conf/:/etc/letsencrypt/
+       #    command: certonly -v --webroot --webroot-path=/var/www/html --email AkiyamaSS@yandex.ru --agree-tos --no-eff-email -d matrix.xn-----6kc7awhbxbfs.xn--p1ai
