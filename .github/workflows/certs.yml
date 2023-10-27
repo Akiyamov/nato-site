@@ -23,5 +23,5 @@ jobs:
         username: ubuntu
         key: ${{ secrets.key }}
         port: 22
-        script: /home/ubuntu/nato-site/certs.sh ${{ inputs.site }}
+        script: cd /home/ubuntu/nato-site; /home/ubuntu/nato-site/certs.sh ${{ inputs.site }}
       
