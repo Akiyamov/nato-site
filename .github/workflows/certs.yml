@@ -1,0 +1,27 @@
+name: Renew certs
+
+on:
+  workflow_dispatch:
+    inputs:
+      site:
+        description: name of website
+        type: choice
+        options:
+          - matrix
+          - nato
+        required: true
+        default: nato
+
+jobs:
+  create_certs:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Renew certs
+      uses: appleboy/ssh-action@v0.1.10
+      with:
+        host: 146.185.209.74
+        username: ubuntu
+        key: ${{ secrets.key }}
+        port: 22
+        script: /home/ubuntu/nato-site/certs.sh ${{ inputs.site }}
+      
