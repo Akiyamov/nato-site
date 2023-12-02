@@ -11,6 +11,8 @@ on:
           - nato
         required: true
         default: nato
+  schedule:
+    - cron 0 0 1 */6 *
 
 jobs:
   create_certs:
